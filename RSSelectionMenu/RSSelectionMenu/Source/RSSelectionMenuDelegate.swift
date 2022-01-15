@@ -39,7 +39,6 @@ open class RSSelectionMenuDelegate<T: Equatable>: NSObject, UITableViewDelegate 
     /// maximum selection limit
     var maxSelectedLimit: UInt?
     
-    
     // MARK: - Initialize
     convenience init(selectedItems: DataSource<T>) {
         self.init()
@@ -89,7 +88,7 @@ open class RSSelectionMenuDelegate<T: Equatable>: NSObject, UITableViewDelegate 
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let height: CGFloat = [UITableView.Style.plain, .grouped].contains(tableView.style) ? 1.0 : 24.0
+        let height: CGFloat = [UITableView.Style.plain, .grouped].contains(tableView.style) ? 0 : 24.0
         return self.isSearchBarAdded(tableView).0 ? defaultHeaderHeight : height
     }
 }
