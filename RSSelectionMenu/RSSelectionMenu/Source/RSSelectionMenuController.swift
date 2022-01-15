@@ -49,6 +49,9 @@ open class RSSelectionMenu<T: Equatable>: UIViewController, UIPopoverPresentatio
     /// Barbuttons titles
     public var leftBarButtonTitle: String?
     public var rightBarButtonTitle: String?
+
+    public var showRightBarButtonItem: Bool = false
+    public var showLeftBarButtonItem: Bool = false
     
     /// cell selection style
     public var cellSelectionStyle: CellSelectionStyle = .tickmark {
@@ -188,12 +191,12 @@ open class RSSelectionMenu<T: Equatable>: UIViewController, UIPopoverPresentatio
         view.addSubview(backgroundView)
         
         // rightBarButton
-        if showRightBarButton() {
+        if showRightBarButton() || showRightBarButtonItem {
             setRightBarButton()
         }
         
         // leftBarButton
-        if showLeftBarButton() {
+        if showLeftBarButton() || showLeftBarButtonItem {
             setLeftBarButton()
         }
     }
